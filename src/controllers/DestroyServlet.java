@@ -36,7 +36,7 @@ public class DestroyServlet extends HttpServlet {
         if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DAO.createEntityManager();
 
-            // セッションスコープからメッセージのIDを取得して
+            // セッションスコープからタスクのIDを取得して
             // 該当のIDのメッセージ1件のみをデータベースから取得
             DTO m = em.find(DTO.class, (Integer)(request.getSession().getAttribute("DTO_id")));
 
